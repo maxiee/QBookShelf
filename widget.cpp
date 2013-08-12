@@ -5,12 +5,12 @@ Widget::Widget(QWidget *parent) :
 {
     shelfOneFloor *one = new shelfOneFloor;
     shelfOneFloor *two = new shelfOneFloor;
-    shelfOneFloor *three = new shelfOneFloor;
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(one);
     layout->addWidget(two);
-    layout->addWidget(three);
     this->setLayout(layout);
+    this->resize(800,600);
+    this->setWindowTitle("QBookShelf");
 }
 
 Widget::~Widget()

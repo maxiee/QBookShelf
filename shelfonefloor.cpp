@@ -7,14 +7,10 @@ shelfOneFloor::shelfOneFloor(QWidget *parent) :
     QBookButton *btn1 = new QBookButton(this);
     QBookButton *btn2 = new QBookButton(this);
     QBookButton *btn3 = new QBookButton(this);
-    QBookButton *btn4 = new QBookButton(this);
-    QBookButton *btn5 = new QBookButton(this);
-    QHBoxLayout *layout = new QHBoxLayout(this);
+        QHBoxLayout *layout = new QHBoxLayout(this);
     layout->addWidget(btn1);
     layout->addWidget(btn2);
     layout->addWidget(btn3);
-    layout->addWidget(btn4);
-    layout->addWidget(btn5);
     this->setLayout(layout);
 }
 
