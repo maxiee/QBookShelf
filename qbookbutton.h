@@ -2,6 +2,8 @@
 #define QBOOKBUTTON_H
 
 #include <QAbstractButton>
+#include <QFileDialog>
+#include <QFileInfo>
 
 class QBookButton : public QAbstractButton
 {
@@ -16,7 +18,7 @@ public slots:
 protected:
     void paintEvent ( QPaintEvent * e );
 private:
-    bool processBookName(QString *str);
+    bool processBookName(QString &str);
     QString *bookAddr;
     QStringList *bookName;
     

@@ -9,8 +9,9 @@ Widget::Widget(QWidget *parent) :
     layout->addWidget(one);
     layout->addWidget(two);
     this->setLayout(layout);
-    this->resize(800,600);
+    this->resize(480,550);
     this->setWindowTitle("QBookShelf");
+
 }
 
 void Widget::paintEvent(QPaintEvent *)
