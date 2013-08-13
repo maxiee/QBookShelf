@@ -13,6 +13,14 @@ Widget::Widget(QWidget *parent) :
     this->setWindowTitle("QBookShelf");
 }
 
+void Widget::paintEvent(QPaintEvent *)
+{
+    QPainter painter(this);
+    painter.setWindow(this->geometry());
+    painter.setBrush(QBrush(QColor(212,173,114)));
+    painter.drawRect(this->geometry());
+}
+
 Widget::~Widget()
 {
 }

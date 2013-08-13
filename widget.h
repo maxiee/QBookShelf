@@ -12,7 +12,7 @@ public:
     explicit Widget(QWidget *parent = 0);
     ~Widget();
 private:
-
+    void paintEvent(QPaintEvent *e);
 
 };
 
