@@ -1,10 +1,10 @@
 #ifndef WIDGET_H
 #define WIDGET_H
 
-#include <QWidget>
+#include <QScrollArea>
 #include<QVBoxLayout>
 #include"shelfonefloor.h"
-class Widget : public QWidget
+class Widget : public QScrollArea
 {
     Q_OBJECT
     
