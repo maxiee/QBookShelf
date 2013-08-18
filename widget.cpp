@@ -3,24 +3,14 @@
 Widget::Widget(QWidget *parent) :
     QScrollArea(parent)
 {
-    shelfOneFloor *one = new shelfOneFloor;
-    shelfOneFloor *two = new shelfOneFloor;
-    shelfOneFloor *three = new shelfOneFloor;
+    shelfOneFloor *one = new shelfOneFloor(this);
 
-    QVBoxLayout *layout = new QVBoxLayout(this);
-    QWidget *wid = new QWidget(this);
-    layout->addWidget(one);
-    layout->addWidget(two);
-    layout->addWidget(three);
-
+    one->resize(500,700);
     this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    wid->setLayout(layout);
-    wid->resize(400,600);
-    wid->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
-    this->setWidget(wid);
+    this->setWidget(one);
     this->setWindowTitle("QBookShelf");
-
+    //this->resize(500,700);
 }
 
 void Widget::paintEvent(QPaintEvent *)

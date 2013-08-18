@@ -2,9 +2,11 @@
 #define SHELFONEFLOOR_H
 
 #include <QWidget>
-#include<QHBoxLayout>
+//#include<QHBoxLayout>
 #include<QPainter>
 #include"qbookbutton.h"
+#include<QGridLayout>
+
 class shelfOneFloor : public QWidget
 {
     Q_OBJECT
