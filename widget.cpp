@@ -5,12 +5,13 @@ Widget::Widget(QWidget *parent) :
 {
     shelfOneFloor *one = new shelfOneFloor(this);
 
-    one->resize(500,700);
+    //one->resize(500,700);
     this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     this->setWidget(one);
     this->setWindowTitle("QBookShelf");
-    //this->resize(500,700);
+    this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    this->resize(one->width()+20,700);
 }
 
 void Widget::paintEvent(QPaintEvent *)

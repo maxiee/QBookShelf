@@ -10,7 +10,7 @@ class QBookButton : public QAbstractButton
     Q_OBJECT
 public:
     explicit QBookButton(QWidget *parent = 0);
-    
+    explicit QBookButton(QWidget *parent = 0,const QString &name = "");
 signals:
     
 public slots:

@@ -5,10 +5,20 @@ QBookButton::QBookButton(QWidget *parent) :
     QAbstractButton(parent)
 {
     this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
-    bookAddr = new QString(QFileDialog::getOpenFileName(this,tr("Open Book"), "/"));
+    //bookAddr = new QString(QFileDialog::getOpenFileName(this,tr("Open Book"), "/"));
     qDebug(bookAddr->toAscii());
     processBookName(*bookAddr);
 
+}
+
+QBookButton::QBookButton(QWidget *parent, const QString &name) :
+    QAbstractButton(parent)
+{
+    this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    bookAddr = new QString(name);
+    qDebug(bookAddr->toAscii());
+    processBookName(*bookAddr);
+    //this->resize(70,140);
 }
 
 void QBookButton::paintEvent(QPaintEvent *e)

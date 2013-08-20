@@ -14,6 +14,8 @@ public:
     explicit shelfOneFloor(QWidget *parent = 0);
 private:
     void paintEvent(QPaintEvent *e);
+    int bookCount;
+    QList<QFileInfo> *bookNameList;
 signals:
     
 public slots:
