@@ -11,7 +11,7 @@ Widget::Widget(QWidget *parent) :
     this->setWidget(one);
     this->setWindowTitle("QBookShelf");
     this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
-    this->resize(one->width()+20,700);
+    this->resize(one->width()+20,500);
 }
 
 void Widget::paintEvent(QPaintEvent *)

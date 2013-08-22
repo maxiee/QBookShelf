@@ -1,5 +1,6 @@
 #include "qbookbutton.h"
 #include <QPainter>
+#include<QProcess>
 
 QBookButton::QBookButton(QWidget *parent) :
     QAbstractButton(parent)
@@ -8,16 +9,18 @@ QBookButton::QBookButton(QWidget *parent) :
     //bookAddr = new QString(QFileDialog::getOpenFileName(this,tr("Open Book"), "/"));
     qDebug(bookAddr->toAscii());
     processBookName(*bookAddr);
-
+    connect(this,SIGNAL(clicked()),this,SLOT(bookPressed()));
 }
 
-QBookButton::QBookButton(QWidget *parent, const QString &name) :
+QBookButton::QBookButton(QWidget *parent, const QString &name, const QString &addr) :
     QAbstractButton(parent)
 {
     this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
     bookAddr = new QString(name);
     qDebug(bookAddr->toAscii());
     processBookName(*bookAddr);
+    address = new QString(addr);
+    connect(this,SIGNAL(clicked()),this,SLOT(bookPressed()));
     //this->resize(70,140);
 }
 
@@ -75,4 +78,14 @@ bool QBookButton::processBookName(QString &str)
     str.remove(0,i+1);
     bookName->append(str.split("."));
     return true;
+}
+
+void QBookButton::bookPressed()
+{
+    QString cmd("\"D:\\软件\\Foxit Reader\\Foxit Reader.exe\" ");
+    cmd.append(address);
+    qDebug(cmd.toAscii());
+    //system(cmd.toAscii());
+    QProcess p;
+    p.execute(cmd);
 }

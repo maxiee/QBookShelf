@@ -22,11 +22,12 @@ shelfOneFloor::shelfOneFloor(QWidget *parent) :
         row = count/3;
         column = count%3;
         QString *str = new QString(bookNameList->at(i).fileName());
+        QString *str2 = new QString(bookNameList->at(i).absoluteFilePath());
         if(str == QString(".")||str == QString(".."))
             continue;
         count++;
         qDebug()<<row<<","<<column;
-        layout->addWidget(new QBookButton(this,*str),row,column);
+        layout->addWidget(new QBookButton(this,*str,*str2),row,column);
     }
     //layout->addWidget(btn1);
     //layout->addWidget(btn2);
