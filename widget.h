@@ -3,6 +3,7 @@
 
 #include <QScrollArea>
 #include<QVBoxLayout>
+#include <QTabBar>
 #include"shelfonefloor.h"
 class Widget : public QScrollArea
 {

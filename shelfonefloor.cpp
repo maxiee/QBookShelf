@@ -1,5 +1,6 @@
 #include "shelfonefloor.h"
 #include<Qdir>
+#include<QFileDialog>
 #include<QFileInfo>
 #include<QDebug>
 
@@ -7,12 +8,12 @@ shelfOneFloor::shelfOneFloor(QWidget *parent) :
     QWidget(parent)
 {
     this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
-    //QBookButton *btn1 = new QBookButton(this);
-    //QBookButton *btn2 = new QBookButton(this);
-    //QBookButton *btn3 = new QBookButton(this);
-    //QHBoxLayout *layout = new QHBoxLayout(this);
     //打开固定文件夹，获取里面的内容，存到一张表里面去
     QDir *dir = new QDir("E://书库//test");
+    //改为让用户选择
+    /*
+    QDir *dir = new QDir(QFileDialog::getExistingDirectory(this,"打开电子书目录"));
+    */
     bookNameList = new QList<QFileInfo>(dir->entryInfoList());
     QGridLayout *layout = new QGridLayout(this);
     int row,column;
@@ -29,9 +30,6 @@ shelfOneFloor::shelfOneFloor(QWidget *parent) :
         qDebug()<<row<<","<<column;
         layout->addWidget(new QBookButton(this,*str,*str2),row,column);
     }
-    //layout->addWidget(btn1);
-    //layout->addWidget(btn2);
-    //layout->addWidget(btn3);
     this->setLayout(layout);
     this->resize(500,70*bookNameList->count());
 }

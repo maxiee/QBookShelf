@@ -15,10 +15,12 @@ TEMPLATE = app
 SOURCES += main.cpp\
         widget.cpp \
     qbookbutton.cpp \
-    shelfonefloor.cpp
+    shelfonefloor.cpp \
+    qmainwindow.cpp
 
 HEADERS  += widget.h \
     qbookbutton.h \
-    shelfonefloor.h
+    shelfonefloor.h \
+    qmainwindow.h
 
 FORMS    +=

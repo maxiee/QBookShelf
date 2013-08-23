@@ -1,7 +1,7 @@
 #ifndef SHELFONEFLOOR_H
 #define SHELFONEFLOOR_H
 
-#include <QWidget>
+#include <QScrollArea>
 //#include<QHBoxLayout>
 #include<QPainter>
 #include"qbookbutton.h"

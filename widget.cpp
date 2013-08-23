@@ -1,17 +1,16 @@
 #include "widget.h"
+#include<QFileDialog>
+#include<QDir>
+#include<QHBoxLayout>
 
 Widget::Widget(QWidget *parent) :
     QScrollArea(parent)
 {
     shelfOneFloor *one = new shelfOneFloor(this);
-
-    //one->resize(500,700);
     this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     this->setWidget(one);
-    this->setWindowTitle("QBookShelf");
-    this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
-    this->resize(one->width()+20,500);
+    this->resize(one->width(),one->height());
 }
 
 void Widget::paintEvent(QPaintEvent *)
